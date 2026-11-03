@@ -5,6 +5,9 @@ Which prescribers should a GLP-1 diabetes brand's sales team visit first? This p
 **Tools:** SQL (DuckDB) · Python (pandas) · Power BI
 
 ![Dashboard](images/dashboard.png)
+### Specialty Analysis
+
+![Specialty Analysis](images/specialty_analysis.png)
 
 ## Key findings
 
