@@ -61,3 +61,5 @@ pip install -r requirements.txt
 ---
 
 **Govind Bansal** · B.Pharm, BITS Pilani · [LinkedIn](https://www.linkedin.com/in/govind-bansal-42b95441b/) · [GitHub](https://github.com/govindbansal-pixel)
+# glp1-prescriber-targeting
+GLP-1 Prescriber Targeting using SQL, Python, DuckDB and Power BI
