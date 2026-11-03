@@ -1,0 +1,28 @@
+// DAX measures for the GLP-1 prescriber targeting dashboard.
+// In Power BI Desktop: Modeling > New measure, then paste ONE measure at a time.
+// The prescriber table is named after its file: glp1_prescribers.
+
+Prescribers =
+// Number of prescribers in the current selection (one row of the table = one prescriber)
+COUNTROWS(glp1_prescribers)
+
+Total Claims =
+// All GLP-1 claims in the current selection
+SUM(glp1_prescribers[total_claims])
+
+Total Drug Cost =
+// Total drug cost in the current selection
+SUM(glp1_prescribers[total_cost])
+
+Claims per Prescriber =
+// Average claims per prescriber. DIVIDE returns blank instead of an error when dividing by zero.
+DIVIDE([Total Claims], [Prescribers])
+
+Top Decile Share =
+// Share of claims written by deciles 8-10. Format it as a percentage (Measure tools > %).
+// CALCULATE recalculates Total Claims with an extra filter (decile >= 8);
+// KEEPFILTERS adds that filter to any slicer selection instead of replacing it.
+DIVIDE(
+    CALCULATE([Total Claims], KEEPFILTERS(glp1_prescribers[decile] >= 8)),
+    [Total Claims]
+)

@@ -1,0 +1,23 @@
+# Python environment and caches
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Secrets (API keys, passwords): never commit these
+.env
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Raw CMS file (several GB): download it instead, see README
+data/partd_prescriber_drug.csv
+
+# DuckDB database built from the raw file
+*.duckdb
+*.duckdb.wal
+
+# Power BI temporary backup files
+*.pbix~
+
+# The small exported tables in data/ (glp1_prescribers.csv, glp1_prescriber_molecule.csv) ARE committed
